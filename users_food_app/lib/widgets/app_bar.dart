@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:users_food_app/assistantMethods/cart_item_counter.dart';
 import 'package:users_food_app/screens/cart_screen.dart';
 
-class MyAppBar extends StatefulWidget with PreferredSizeWidget {
+class MyAppBar extends StatefulWidget {
   final PreferredSizeWidget? bottom;
   final String? sellerUID;
   MyAppBar({Key? key, this.bottom, this.sellerUID}) : super(key: key);

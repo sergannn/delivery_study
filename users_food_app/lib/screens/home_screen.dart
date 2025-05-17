@@ -140,11 +140,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: circularProgress(),
                         ),
                       )
-                    : SliverStaggeredGrid.countBuilder(
-                        staggeredTileBuilder: (c) => const StaggeredTile.fit(1),
-                        crossAxisCount: 1,
-                        mainAxisSpacing: 1,
-                        crossAxisSpacing: 1,
+                    : GridView.builder(
+                        padding: const EdgeInsets.all(16.0),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 4,
+                          crossAxisSpacing: 16.0,
+                          mainAxisSpacing: 16.0,
+                          childAspectRatio: 0.75,
+                        ),
                         itemBuilder: (context, index) {
                           Sellers smodel = Sellers.fromJson(
                               snapshot.data!.docs[index].data()!

@@ -1,7 +1,7 @@
 import 'package:bringapp_admin_web_portal/authentication/login_screen.dart';
 import 'package:bringapp_admin_web_portal/screens/home_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -15,14 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Admin Web Portal',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-      ),
-      home: FirebaseAuth.instance.currentUser == null
-          ? const LoginScreen()
-          : const HomeScreen(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Admin Web Portal',
+        theme: ThemeData(
+          primarySwatch: Colors.amber,
+        ),
+        home: //FirebaseAuth.instance.currentUser == null
+            const LoginScreen()
+        //    const HomeScreen(),
+        );
   }
 }

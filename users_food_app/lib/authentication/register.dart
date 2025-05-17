@@ -16,6 +16,8 @@ import '../widgets/custom_text_field.dart';
 import '../widgets/error_dialog.dart';
 import '../widgets/header_widget.dart';
 import '../widgets/loading_dialog.dart';
+import 'package:flutter/foundation.dart' show Uint8List, kIsWeb;
+import 'package:file_picker/file_picker.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -40,84 +42,90 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
 //function for getting image
   Future<void> _getImage() async {
-    imageXFile = await _picker.pickImage(source: ImageSource.gallery);
+    if (kIsWeb) {
+      // Web image picking
+      FilePickerResult? result = await FilePicker.platform.pickFiles(
+        type: FileType.image,
+        allowMultiple: false,
+      );
 
-    setState(() {
-      imageXFile;
-    });
+      if (result != null) {
+        setState(() {
+          imageXFile = XFile.fromData(
+            result.files.first.bytes!,
+            name: result.files.first.name,
+          );
+        });
+      }
+    } else {
+      // Mobile image picking (original code)
+      imageXFile = await _picker.pickImage(source: ImageSource.gallery);
+      setState(() {
+        imageXFile;
+      });
+    }
   }
 
-//Form Validation
+  // Updated signUpFormValidation
   Future<void> signUpFormValidation() async {
-    //checking if user selected image
     if (imageXFile == null) {
-      setState(
-        () {
-          // imageXFile == "images/bg.png";
-          showDialog(
-            context: context,
-            builder: (c) {
-              return const ErrorDialog(
-                message: "Please select an image",
-              );
-            },
-          );
-        },
+      showDialog(
+        context: context,
+        builder: (c) => const ErrorDialog(message: "Please select an image"),
       );
-    } else {
-      if (passwordController.text == confirmpasswordController.text) {
-        //nested if (cheking if controllers empty or not)
-        if (confirmpasswordController.text.isNotEmpty &&
-            emailController.text.isNotEmpty &&
-            nameController.text.isNotEmpty) {
-          //start uploading image
-          showDialog(
-            context: context,
-            builder: (c) {
-              return const LoadingDialog(
-                message: "Registering Account",
-              );
-            },
-          );
+      return;
+    }
 
-          String fileName = DateTime.now().millisecondsSinceEpoch.toString();
-          fStorage.Reference reference = fStorage.FirebaseStorage.instance
-              .ref()
-              .child("users")
-              .child(fileName);
-          fStorage.UploadTask uploadTask =
-              reference.putFile(File(imageXFile!.path));
-          fStorage.TaskSnapshot taskSnapshot =
-              await uploadTask.whenComplete(() {});
-          await taskSnapshot.ref.getDownloadURL().then((url) {
-            userImageUrl = url;
+    if (passwordController.text != confirmpasswordController.text) {
+      showDialog(
+        context: context,
+        builder: (c) => const ErrorDialog(message: "Password do not match"),
+      );
+      return;
+    }
 
-            // save info to firestore
-            AuthenticateSellerAndSignUp();
-          });
-        }
-        //if there is empty place show this message
-        else {
-          showDialog(
-            context: context,
-            builder: (c) {
-              return const ErrorDialog(
-                message: "Please fill the required info for Registration. ",
-              );
-            },
-          );
-        }
+    if (confirmpasswordController.text.isEmpty ||
+        emailController.text.isEmpty ||
+        nameController.text.isEmpty) {
+      showDialog(
+        context: context,
+        builder: (c) => const ErrorDialog(
+          message: "Please fill the required info for Registration.",
+        ),
+      );
+      return;
+    }
+
+    // Start uploading image
+    showDialog(
+      context: context,
+      builder: (c) => const LoadingDialog(message: "Registering Account"),
+    );
+
+    try {
+      String fileName = DateTime.now().millisecondsSinceEpoch.toString();
+      fStorage.Reference reference = fStorage.FirebaseStorage.instance
+          .ref()
+          .child("users")
+          .child(fileName);
+
+      if (kIsWeb) {
+        // Web upload
+        Uint8List bytes = await imageXFile!.readAsBytes();
+        await reference.putData(bytes);
       } else {
-        //show an error if passwords do not match
-        showDialog(
-          context: context,
-          builder: (c) {
-            return const ErrorDialog(
-              message: "Password do not match",
-            );
-          },
-        );
+        // Mobile upload
+        await reference.putFile(File(imageXFile!.path));
       }
+
+      userImageUrl = await reference.getDownloadURL();
+      AuthenticateSellerAndSignUp();
+    } catch (e) {
+      Navigator.pop(context);
+      showDialog(
+        context: context,
+        builder: (c) => ErrorDialog(message: e.toString()),
+      );
     }
   }
 

@@ -4,7 +4,7 @@ import 'package:bringapp_admin_web_portal/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SimpleAppBar extends StatelessWidget with PreferredSizeWidget {
+class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
   final PreferredSizeWidget? bottom;
   String? title;
   SimpleAppBar({super.key, this.bottom, this.title});

@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.0-80.1.beta <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -36,32 +36,35 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   
-  shared_preferences: ^2.0.11
-  carousel_slider: ^4.0.0
-  number_inc_dec: ^0.8.0
-  fluttertoast: ^8.0.8
-  provider: ^6.0.2
-  flutter_carousel_slider: ^1.0.8
-  url_launcher: ^6.0.18
-  intl: ^0.17.0 
+  shared_preferences: 
+  carousel_slider: 
+  number_inc_dec: 
+  fluttertoast: ^8.2.12
+  provider: 
+  flutter_carousel_slider: 
+  url_launcher: 
+  intl: 
 
-  hexcolor: ^3.0.1
-  lottie: ^1.2.2
+  hexcolor: 
+  lottie:
 
 
   image_picker: ^0.8.4+4
   geolocator: ^11.0.0
   geocoding: ^2.2.0
-  flutter_staggered_grid_view: ^0.4.1
-  cloud_firestore: ^4.15.6
-  firebase_auth: ^4.17.6
-  firebase_core: ^2.25.5
+  flutter_staggered_grid_view: 
+  cloud_firestore: 
+  firebase_auth: 
+  firebase_core: 
   # google_fonts: ^6.2.0
-  firebase_storage: ^11.6.7
-  google_fonts: 6.1.0
-  firebase_analytics: ^10.8.8
+  firebase_storage: 
+  google_fonts: 
+  firebase_analytics: 
+  file_picker: ^10.1.9
 
-
+dependency_overrides: 
+  firebase_storage: ^12.3.7
+  cloud_firestore: ^5.6.0
 
 dev_dependencies:
   flutter_test:

@@ -100,5 +100,24 @@
       loadMainDartJs();
     }
   </script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.3/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+ apiKey: "AIzaSyCCqGmo6SympX_Yu_B0C2A3ZckIvs6Cf14",
+          authDomain: "kittycat-f66bf.firebaseapp.com",
+          projectId: "kittycat-f66bf",
+          storageBucket: "kittycat-f66bf.firebasestorage.app",
+          messagingSenderId: "686273974184",
+          appId: "1:686273974184:web:e4b37b1beaa039e69ed79d"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>
