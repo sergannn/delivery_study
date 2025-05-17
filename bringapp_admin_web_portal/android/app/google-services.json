@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "390216122653",
+    "project_id": "avocado-ed7ec",
+    "storage_bucket": "avocado-ed7ec.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390216122653:android:a490f0615a7bc4d681e1f4",
+        "android_client_info": {
+          "package_name": "com.example.bringapp_admin_web_portal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOyAJsshrfjJswZlOBCKfFx5YwXDlh3nk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390216122653:android:3b986ff8cd3bb89881e1f4",
+        "android_client_info": {
+          "package_name": "com.servanius.incorporated"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOyAJsshrfjJswZlOBCKfFx5YwXDlh3nk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

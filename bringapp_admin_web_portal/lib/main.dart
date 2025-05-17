@@ -1,11 +1,17 @@
 import 'package:bringapp_admin_web_portal/authentication/login_screen.dart';
 import 'package:bringapp_admin_web_portal/screens/home_screen.dart';
-//import 'package:firebase_auth/firebase_auth.dart';
-//import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
+import 'firebase_options.dart';
+
 Future<void> main() async {
-  await Firebase.initializeApp();
+//  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options:
+        DefaultFirebaseOptions.currentPlatform, // Auto-selects correct config
+  );
   runApp(const MyApp());
 }
 
