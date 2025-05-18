@@ -54,7 +54,7 @@ class _SellersDesignWidgetState extends State<SellersDesignWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    Text("..."+
                       widget.model!.sellerName!,
                       style: const TextStyle(
                         color: Colors.orange,
@@ -63,7 +63,7 @@ class _SellersDesignWidgetState extends State<SellersDesignWidget> {
                       ),
                     ),
                     Text(
-                      widget.model!.sellerEmail!,
+                      widget.model!.sellerEmail! + "\n${widget.model!.sellerName}",
                       style: const TextStyle(
                         color: Colors.grey,
                         fontSize: 15,

@@ -1,18 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:users_food_app/assistantMethods/assistant_methods.dart';
+import 'package:users_food_app/authentication/login.dart';
+import 'package:users_food_app/models/sellers.dart';
+import 'package:users_food_app/widgets/design/sellers_design.dart';
 import 'package:users_food_app/widgets/items_avatar_carousel.dart';
 import 'package:users_food_app/widgets/my_drawer.dart';
-import 'package:users_food_app/widgets/progress_bar.dart';
-
-import '../authentication/login.dart';
-import '../models/sellers.dart';
-import '../widgets/seller_avatar_carousel.dart';
-import '../widgets/design/sellers_design.dart';
-import '../widgets/user_info.dart';
+import 'package:users_food_app/widgets/seller_avatar_carousel.dart';
+import 'package:users_food_app/widgets/user_info.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,150 +18,111 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
-  final TextEditingController _controller = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-
-    clearCartNow(context);
-  }
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MyDrawer(),
+      appBar: AppBar(
+        title: Text('Restaurants', style: GoogleFonts.lato()),
+        backgroundColor: const Color(0xFFFAC898),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.exit_to_app),
+            onPressed: () => _auth.signOut().then((_) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (c) => const LoginScreen()),
+              );
+            }),
+          ),
+        ],
+      ),
+      drawer:  MyDrawer(),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: FractionalOffset(-2.0, 0.0),
-            end: FractionalOffset(5.0, -1.0),
-            colors: [
-              Color(0xFFFFFFFF),
-              Color(0xFFFAC898),
-            ],
+            colors: [Color(0xFFFFFFFF), Color(0xFFFAC898)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
         ),
-        child: CustomScrollView(
-          slivers: [
-            //appbar
-            SliverAppBar(
-              elevation: 1,
-              pinned: true,
-              backgroundColor: const Color(0xFFFAC898),
-              foregroundColor: Colors.black,
-              expandedHeight: 50,
-              flexibleSpace: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: FractionalOffset(-1.0, 0.0),
-                    end: FractionalOffset(4.0, -1.0),
-                    colors: [
-                      Color(0xFFFFFFFF),
-                      Color(0xFFFAC898),
-                    ],
-                  ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const UserInformation(),
+              const SizedBox(height: 16),
+              
+              // Carousels Row
+              SizedBox(
+                height: 200,
+                child: Row(
+                  children: const [
+                    Expanded(child: SellerCarouselWidget()),
+                    SizedBox(width: 8),
+                    Expanded(child: ItemsAvatarCarousel()),
+                  ],
                 ),
-                child: FlexibleSpaceBar(
-                  title: Text(
-                    'Restaurants',
+              ),
+              
+              const SizedBox(height: 24),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'All Restaurants',
                     style: GoogleFonts.lato(
-                      textStyle: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  centerTitle: false,
                 ),
               ),
-              actions: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: GestureDetector(
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.amber,
+              const SizedBox(height: 16),
+              
+              // Restaurants Grid
+              StreamBuilder<QuerySnapshot>(
+                stream: FirebaseFirestore.instance.collection("sellers").snapshots(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                  
+                  if (snapshot.data!.docs.isEmpty) {
+                    return const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text('No restaurants available'),
+                    );
+                  }
+                  
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 16,
+                        mainAxisSpacing: 16,
+                        childAspectRatio: 0.75,
                       ),
-                      child: const Icon(Icons.exit_to_app),
-                    ),
-                    onTap: () {
-                      firebaseAuth.signOut().then((value) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (c) => const LoginScreen(),
-                          ),
+                      itemCount: snapshot.data!.docs.length,
+                      itemBuilder: (context, index) {
+                        final seller = Sellers.fromJson(
+                          snapshot.data!.docs[index].data() as Map<String, dynamic>);
+                        return SellersDesignWidget(
+                          model: seller,
+                          context: context,
                         );
-                        _controller.clear();
-                      });
-                    },
-                  ),
-                ),
-              ],
-            ),
-            //Carausel
-            const SliverToBoxAdapter(
-              child: UserInformation(),
-            ),
-
-            SliverToBoxAdapter(
-              child: Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: SizedBox(
-                  //taking %20 height for the device
-                  height: MediaQuery.of(context).size.height * .2,
-                  //taking max width for the device
-                  width: MediaQuery.of(context).size.width,
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SellerCarouselWidget(),
-                      ItemsAvatarCarousel(),
-                    ],
-                  ),
-                ),
+                      },
+                    ),
+                  );
+                },
               ),
-            ),
-            StreamBuilder<QuerySnapshot>(
-              stream:
-                  FirebaseFirestore.instance.collection("sellers").snapshots(),
-              builder: (context, snapshot) {
-                return !snapshot.hasData
-                    ? SliverToBoxAdapter(
-                        child: Center(
-                          child: circularProgress(),
-                        ),
-                      )
-                    : GridView.builder(
-                        padding: const EdgeInsets.all(16.0),
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 4,
-                          crossAxisSpacing: 16.0,
-                          mainAxisSpacing: 16.0,
-                          childAspectRatio: 0.75,
-                        ),
-                        itemBuilder: (context, index) {
-                          Sellers smodel = Sellers.fromJson(
-                              snapshot.data!.docs[index].data()!
-                                  as Map<String, dynamic>);
-                          return Padding(
-                            padding: const EdgeInsets.all(8),
-                            child: SellersDesignWidget(
-                              model: smodel,
-                              context: context,
-                            ),
-                          );
-                        },
-                        itemCount: snapshot.data!.docs.length,
-                      );
-              },
-            )
-          ],
+              const SizedBox(height: 30),
+            ],
+          ),
         ),
       ),
     );

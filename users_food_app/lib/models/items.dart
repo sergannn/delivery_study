@@ -26,6 +26,8 @@ class Items {
   });
 
   Items.fromJson(Map<String, dynamic> json) {
+
+    print(json);
     menuID = json["menuID"];
     sellerUID = json["sellerUID"];
     itemID = json["itemID"];

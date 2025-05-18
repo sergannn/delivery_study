@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sellers_food_app/global/global.dart';
 import 'package:sellers_food_app/models/menus.dart';
@@ -20,119 +19,158 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  void initState() {
+    super.initState();
+    _printDebugInfo();
+  }
+
+  void _printDebugInfo() {
+    print('=== DEBUG INFO ===');
+    print('Seller UID: ${sharedPreferences?.getString("uid")}');
+    print('=================');
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MyDrawer(),
+      drawer:  MyDrawer(),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: FractionalOffset(-2.0, 0.0),
-            end: FractionalOffset(5.0, -1.0),
             colors: [
               Color(0xFFFFFFFF),
               Color.fromARGB(255, 116, 112, 108),
             ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
           ),
         ),
         child: CustomScrollView(
           slivers: [
-            //appbar
             SliverAppBar(
               elevation: 1,
               pinned: true,
-              backgroundColor: Color.fromARGB(255, 92, 89, 86),
-              foregroundColor: Colors.black,
-              expandedHeight: 50,
-              flexibleSpace: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: FractionalOffset(-1.0, 0.0),
-                    end: FractionalOffset(4.0, -1.0),
-                    colors: [
-                      Color(0xFFFFFFFF),
-                      Color.fromARGB(255, 66, 64, 62),
-                    ],
-                  ),
-                ),
-                child: FlexibleSpaceBar(
-                  title: Text(
-                    'Sellers App',
-                    style: GoogleFonts.lato(
-                      textStyle: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
+              backgroundColor: const Color.fromARGB(255, 92, 89, 86),
+              expandedHeight: 100,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text(
+                  'Sellers App',
+                  style: GoogleFonts.lato(
+                    textStyle: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
                   ),
-                  centerTitle: false,
+                ),
+                centerTitle: false,
+                background: Container(
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Color(0xFFFFFFFF),
+                        Color.fromARGB(255, 66, 64, 62),
+                      ],
+                    ),
+                  ),
                 ),
               ),
               actions: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: GestureDetector(
-                    child: Container(
-                      padding: const EdgeInsets.all(8),
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color.fromARGB(255, 44, 43, 41),
+                IconButton(
+                  icon: const Icon(Icons.add),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (c) => const MenusUploadScreen(),
                       ),
-                      child: const Icon(Icons.add),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (c) => const MenusUploadScreen(),
-                        ),
-                      );
-                    },
-                  ),
+                    );
+                  },
                 ),
               ],
             ),
-            // this is where seller info is displayed
+
             const SliverToBoxAdapter(
               child: SellerInfo(),
             ),
+
             StreamBuilder<QuerySnapshot>(
               stream: FirebaseFirestore.instance
                   .collection("sellers")
                   .doc(sharedPreferences!.getString("uid"))
                   .collection("menus")
-                  //ordering menus and items by publishing date (descending)
                   .orderBy("publishedDate", descending: true)
                   .snapshots(),
               builder: (context, snapshot) {
-                return !snapshot.hasData
-                    ? SliverToBoxAdapter(
-                        child: Center(
-                          child: circularProgress(),
-                        ),
-                      )
-                    : GridView.builder(
-                        padding: const EdgeInsets.all(16.0),
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 4,
-                          crossAxisSpacing: 16.0,
-                          mainAxisSpacing: 16.0,
-                          childAspectRatio: 0.75,
-                        ),
-                        itemBuilder: (context, index) {
-                          Menus model = Menus.fromJson(
-                              snapshot.data!.docs[index].data()!
-                                  as Map<String, dynamic>);
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: InfoDesignWidget(
-                              model: model,
-                              context: context,
+                // Debug output
+                print('\n=== STREAM UPDATE ===');
+                print('Connection state: ${snapshot.connectionState}');
+                print('Has data: ${snapshot.hasData}');
+                print('Has error: ${snapshot.hasError}');
+                
+                if (snapshot.hasError) {
+                  print('Error details: ${snapshot.error}');
+                  return SliverToBoxAdapter(
+                    child: Center(child: Text('Error: ${snapshot.error}')),
+                  );
+                }
+
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const SliverToBoxAdapter(
+                    child: Center(child: CircularProgressIndicator()),
+                  );
+                }
+
+                if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+                  print('No menus found in collection');
+                  return SliverToBoxAdapter(
+                    child: Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text('No menus available'),
+                          TextButton(
+                            onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (c) => const MenusUploadScreen(),
+                              ),
                             ),
-                          );
-                        },
-                        itemCount: snapshot.data!.docs.length,
-                      );
+                            child: const Text('Add New Menu'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                }
+
+                print('Menus count: ${snapshot.data!.docs.length}');
+                print('First menu: ${snapshot.data!.docs.first.data()}');
+
+                return SliverPadding(
+                  padding: const EdgeInsets.all(16),
+                  sliver: SliverGrid(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, // Changed from 4 to 2 for better mobile view
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 16,
+                      childAspectRatio: 0.75,
+                    ),
+                    delegate: SliverChildBuilderDelegate(
+                      (context, index) {
+                        final menuData = snapshot.data!.docs[index].data() as Map<String, dynamic>;
+                        print('Building menu $index: ${menuData['title']}');
+                        
+                        Menus model = Menus.fromJson(menuData);
+                        return InfoDesignWidget(
+                          model: model,
+                          context: context,
+                        );
+                      },
+                      childCount: snapshot.data!.docs.length,
+                    ),
+                  ),
+                );
               },
             ),
           ],

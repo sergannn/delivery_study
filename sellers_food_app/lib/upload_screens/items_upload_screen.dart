@@ -53,7 +53,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
           ),
         ),
         title: Text(
-          "Add New Items",
+          "Add New Items"+widget.model.toString(),
           style: GoogleFonts.lato(
             textStyle: const TextStyle(
               fontSize: 25,
@@ -200,7 +200,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
           ),
         ),
         title: Text(
-          "New Item Form",
+          "New Item Form ${widget.model}",
           style: GoogleFonts.lato(
             textStyle: const TextStyle(
               fontSize: 20,
@@ -395,7 +395,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
   }
 
   validateUploadForm() async {
-    if (imageXFile != null) {
+    if (imageXFile != null ) {
       if (shortInfoController.text.isNotEmpty &&
           titleController.text.isNotEmpty &&
           descriptionController.text.isNotEmpty &&
@@ -406,8 +406,8 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
         });
 
         //upload image
-        String downloadUrl = await uploadImage(File(imageXFile!.path));
-
+//        String downloadUrl = await uploadImage(File(imageXFile!.path));
+        String downloadUrl='https://avatars.mds.yandex.net/get-maps-adv-crm/3713455/2a00000186d0550f15a168e96cb71c32975e/landing_background';
         //save info to firestore
 
         saveInfo(downloadUrl);

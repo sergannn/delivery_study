@@ -1,16 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:users_food_app/assistantMethods/assistant_methods.dart';
+import 'package:users_food_app/models/menus.dart';
+import 'package:users_food_app/models/sellers.dart';
+import 'package:users_food_app/splash_screen/splash_screen.dart';
 import 'package:users_food_app/widgets/design/menus_design.dart';
-
-import '../models/menus.dart';
-import '../models/sellers.dart';
-import '../splash_screen/splash_screen.dart';
-import '../widgets/progress_bar.dart';
 
 class MenusScreen extends StatefulWidget {
   final Sellers? model;
@@ -22,6 +19,7 @@ class MenusScreen extends StatefulWidget {
 
 class _MenusScreenState extends State<MenusScreen> {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +27,6 @@ class _MenusScreenState extends State<MenusScreen> {
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
-              begin: FractionalOffset(-2.0, 0.0),
-              end: FractionalOffset(5.0, -1.0),
               colors: [
                 Color(0xFFFFFFFF),
                 Color(0xFFFAC898),
@@ -42,86 +38,66 @@ class _MenusScreenState extends State<MenusScreen> {
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
             clearCartNow(context);
-
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (c) => const SplashScreen(),
-              ),
-            );
-
+            Navigator.push(context, MaterialPageRoute(builder: (c) => const SplashScreen()));
             Fluttertoast.showToast(msg: "Cart has been cleared.");
           },
         ),
         title: Text(
-          widget.model!.sellerName.toString() + " Menus",
+          "${widget.model!.sellerName} Menus",
           style: GoogleFonts.lato(
-            textStyle: const TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
           ),
         ),
         centerTitle: true,
-        automaticallyImplyLeading: true,
-        elevation: 0,
       ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            begin: FractionalOffset(-2.0, 0.0),
-            end: FractionalOffset(5.0, -1.0),
             colors: [
               Color(0xFFFFFFFF),
               Color(0xFFFAC898),
             ],
           ),
         ),
-        child: CustomScrollView(
-          slivers: [
-            const SliverToBoxAdapter(child: SizedBox(height: 20)),
-            StreamBuilder<QuerySnapshot>(
-              stream: FirebaseFirestore.instance
-                  .collection("sellers")
-                  .doc(widget.model!.sellerUID)
-                  .collection("menus")
-                  //ordering menus and items by publishing date (descending)
-                  .orderBy("publishedDate", descending: true)
-                  .snapshots(),
-              builder: (context, snapshot) {
-                return !snapshot.hasData
-                    ? SliverToBoxAdapter(
-                        child: Center(
-                          child: circularProgress(),
-                        ),
-                      )
-                    : GridView.builder(
-                        padding: const EdgeInsets.all(16.0),
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 4,
-                          crossAxisSpacing: 16.0,
-                          mainAxisSpacing: 16.0,
-                          childAspectRatio: 0.75,
-                        ),
-                        itemBuilder: (context, index) {
-                          Menus model = Menus.fromJson(
-                              snapshot.data!.docs[index].data()!
-                                  as Map<String, dynamic>);
-                          return Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: MenusDesignWidget(
-                              model: model,
-                              context: context,
-                            ),
-                          );
-                        },
-                        itemCount: snapshot.data!.docs.length,
-                      );
-              },
-            ),
-          ],
+        child: StreamBuilder<QuerySnapshot>(
+          stream: FirebaseFirestore.instance
+              .collection("sellers")
+              .doc(widget.model!.sellerUID)
+              .collection("menus")
+              .orderBy("publishedDate", descending: true)
+              .snapshots(),
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) {
+              return const Center(child: CircularProgressIndicator());
+            }
+
+            if (snapshot.data!.docs.isEmpty) {
+              return  Center(child: Text("No menus available"+widget.model!.sellerUID.toString()));
+            }
+
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.75,
+                ),
+                itemCount: snapshot.data!.docs.length,
+                itemBuilder: (context, index) {
+                  Menus model = Menus.fromJson(
+                    snapshot.data!.docs[index].data()! as Map<String, dynamic>);
+                  return MenusDesignWidget(
+                    model: model,
+                    context: context,
+                  );
+                },
+              ),
+            );
+          },
         ),
       ),
     );
