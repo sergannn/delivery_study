@@ -108,12 +108,15 @@ class _ItemsScreenState extends State<ItemsScreen> {
                           child: circularProgress(),
                         ),
                       )
-                    : SliverStaggeredGrid.countBuilder(
-                        staggeredTileBuilder: (c) =>
-                            const StaggeredTile.count(1, 1.5),
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 1,
-                        crossAxisSpacing: 0,
+                    : GridView.builder(
+                        padding: const EdgeInsets.all(16.0),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 4,
+                          crossAxisSpacing: 16.0,
+                          mainAxisSpacing: 16.0,
+                          childAspectRatio: 0.75,
+                        ),
                         itemBuilder: (context, index) {
                           Items model = Items.fromJson(
                               snapshot.data!.docs[index].data()!

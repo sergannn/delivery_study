@@ -57,7 +57,8 @@ class _SellerCarouselWidgetState extends State<SellerCarouselWidget> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: Image.network(
-                      document['sellerAvatarUrl'],
+                      'https://s.restorating.ru/places/3840x2160/places/42655/62fcb3f1afd63.jpg',
+//                      document['sellerAvatarUrl'],
                       fit: BoxFit.fill,
                       height: 190,
                     ),

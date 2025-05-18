@@ -371,8 +371,8 @@ class _MenusUploadScreenState extends State<MenusUploadScreen> {
         });
 
         //upload image
-        String downloadUrl = await uploadImage(File(imageXFile!.path));
-
+        //String downloadUrl = await uploadImage(File(imageXFile!.path));
+        String downloadUrl = '';
         //save info to firestore
 
         saveInfo(downloadUrl);
@@ -410,7 +410,7 @@ class _MenusUploadScreenState extends State<MenusUploadScreen> {
     storageRef.TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() {});
 
     String downloadingUrl = await taskSnapshot.ref.getDownloadURL();
-
+//    return null;
     return downloadingUrl;
   }
 
@@ -433,7 +433,7 @@ class _MenusUploadScreenState extends State<MenusUploadScreen> {
         "menuTitle": titleController.text.toString(),
         "publishedDate": DateTime.now(),
         "status": "available",
-        "thumbnailUrl": downloadUrl,
+        //      "thumbnailUrl": downloadUrl,
       },
     );
 

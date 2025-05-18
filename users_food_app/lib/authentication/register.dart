@@ -231,7 +231,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     alignment: Alignment.center,
                     child: InkWell(
                       onTap: () {
-                        _getImage();
+                        //  _getImage();
                       },
                       child: CircleAvatar(
                         radius: MediaQuery.of(context).size.width * 0.20,
