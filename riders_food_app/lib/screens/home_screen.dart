@@ -190,7 +190,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         title: Text(
-          "Welcome " + sharedPreferences!.getString("name")!.toUpperCase(),
+          "Welcome " ,
           style: GoogleFonts.lato(
             textStyle: const TextStyle(
               fontSize: 20,

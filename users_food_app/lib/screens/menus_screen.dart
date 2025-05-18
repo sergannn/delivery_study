@@ -22,6 +22,7 @@ class _MenusScreenState extends State<MenusScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
@@ -74,7 +75,7 @@ class _MenusScreenState extends State<MenusScreen> {
             }
 
             if (snapshot.data!.docs.isEmpty) {
-              return  Center(child: Text("No menus available"+widget.model!.sellerUID.toString()));
+              return  Center(child: Text("No menus available"+widget.model!.toJson().toString()));
             }
 
             return Padding(

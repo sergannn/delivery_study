@@ -77,6 +77,7 @@ class _SellersDesignWidgetState extends State<SellersDesignWidget> {
           ),
         ),
         onTap: () {
+        //  print(widget.model);return;
           Navigator.push(
             context,
             MaterialPageRoute(

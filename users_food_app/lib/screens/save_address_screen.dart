@@ -74,8 +74,8 @@ class SaveAddressScreen extends StatelessWidget {
               phoneNumber: _phoneNumber.text.trim(),
               flatNumber: _flatNumber.text.trim(),
               city: _city.text.trim(),
-              lat: position!.latitude,
-              lng: position!.longitude,
+              lat: 0.0,//position!.latitude,
+              lng: 0.0,//position!.longitude,
             ).toJson();
 
             FirebaseFirestore.instance
