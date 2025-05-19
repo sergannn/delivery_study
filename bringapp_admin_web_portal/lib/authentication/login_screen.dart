@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Colors.blue.shade900,
+          backgroundColor: Colors.indigo,
           duration: const Duration(seconds: 5),
         );
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.black,
                 ),
               ),
-              backgroundColor: Colors.blue.shade900,
+              backgroundColor: Colors.indigo,
               duration: Duration(seconds: 4),
             );
             ScaffoldMessenger.of(context).showSnackBar(snackBar);

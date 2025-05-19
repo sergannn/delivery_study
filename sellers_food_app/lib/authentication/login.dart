@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
       context: context,
       builder: (c) {
         return const LoadingDialog(
-          message: "Checking Credentials...",
+          message: "Проверка данных...",
         );
       },
     );
@@ -167,7 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 50),
               Center(
                 child: Text(
-                  'Вход для ресторанов',
+                  'Панель администратора',
                   style: GoogleFonts.lato(
                     textStyle: const TextStyle(
                         fontSize: 25,
@@ -226,7 +226,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           end: Alignment.bottomRight,
                           stops: [0.0, 1.0],
                           colors: [
-                            Colors.blue.shade900,
+                            Colors.indigo,
                             Colors.black,
                           ],
                         ),
@@ -268,9 +268,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Text.rich(
                         TextSpan(
                           children: [
-                            const TextSpan(text: "Don't have an account? "),
+                            const TextSpan(text: "Нет аккаунта?"),
                             TextSpan(
-                              text: 'Create',
+                              text: 'Создать',
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   Navigator.push(

@@ -49,7 +49,7 @@ class MyDrawer extends StatelessWidget {
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.blue.shade900.withOpacity(0.4),
+                                color: Colors.indigo.withOpacity(0.4),
                                 offset: const Offset(-1, 10),
                                 blurRadius: 10,
                               )
@@ -98,7 +98,7 @@ class MyDrawer extends StatelessWidget {
                       'Домой',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -123,7 +123,7 @@ class MyDrawer extends StatelessWidget {
                       'Мои заказы',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -148,7 +148,7 @@ class MyDrawer extends StatelessWidget {
                       'История',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -173,7 +173,7 @@ class MyDrawer extends StatelessWidget {
                       'Поиск',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -198,7 +198,7 @@ class MyDrawer extends StatelessWidget {
                       'Добавить адрес',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -223,7 +223,7 @@ class MyDrawer extends StatelessWidget {
                       'Выход',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

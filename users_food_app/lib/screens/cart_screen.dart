@@ -118,7 +118,7 @@ class _CartScreenState extends State<CartScreen> {
                 "Очистить",
                 style: TextStyle(fontSize: 16),
               ),
-              backgroundColor: Colors.blue.shade900,
+              backgroundColor: Colors.indigo,
               icon: const Icon(Icons.clear_all),
               onPressed: () {
                 clearCartNow(context);
@@ -138,7 +138,7 @@ class _CartScreenState extends State<CartScreen> {
                 "Подтвердить",
                 style: TextStyle(fontSize: 16),
               ),
-              backgroundColor: Colors.blue.shade900,
+              backgroundColor: Colors.indigo,
               icon: const Icon(Icons.navigate_next),
               onPressed: () {
                 Navigator.push(

@@ -1,4 +1,4 @@
-import 'package:bringapp_admin_web_portal/screens/home_screen.dart';
+import '../screens/home_screen2.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -63,7 +63,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: ((context) => const HomeScreen())));
+                          builder: ((context) => const AdminHomeScreen())));
                   SnackBar snackBar = SnackBar(
                     content: Text(
                       "Юзер разблокирован",
@@ -72,7 +72,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
                         color: Colors.black,
                       ),
                     ),
-                    backgroundColor: Colors.blue.shade900,
+                    backgroundColor: Colors.indigo,
                     duration: Duration(seconds: 2),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -165,7 +165,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
                     padding: const EdgeInsets.all(20.0),
                     child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue.shade900,
+                        backgroundColor: Colors.indigo,
                       ),
                       onPressed: () {
                         SnackBar snackBar = SnackBar(

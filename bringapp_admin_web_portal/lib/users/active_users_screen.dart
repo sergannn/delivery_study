@@ -72,7 +72,7 @@ class _ActiveUsersScreenState extends State<ActiveUsersScreen> {
                         color: Colors.black,
                       ),
                     ),
-                    backgroundColor: Colors.blue.shade900,
+                    backgroundColor: Colors.indigo,
                     duration: Duration(seconds: 2),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -129,8 +129,8 @@ class _ActiveUsersScreenState extends State<ActiveUsersScreen> {
                           ),
                         ),
                       ),
-                      title: Text(
-                        allusers!.docs[i].get("name"),
+                      title: Text('',
+//                        allusers!.docs[i].get("name"),
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
                             fontSize: 20,
@@ -165,7 +165,7 @@ class _ActiveUsersScreenState extends State<ActiveUsersScreen> {
                     padding: const EdgeInsets.all(20.0),
                     child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                        backgroundColor: Colors.blue,
                       ),
                       onPressed: () {
                         displayDialogBoxForBlockingAccount(
@@ -208,7 +208,7 @@ class _ActiveUsersScreenState extends State<ActiveUsersScreen> {
     return Scaffold(
       backgroundColor: const Color(0xff1b232A),
       appBar: SimpleAppBar(
-        title: "All Active Users",
+        title: "Пользователи",
       ),
       body: Center(
         child: SizedBox(

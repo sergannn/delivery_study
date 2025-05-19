@@ -1,6 +1,8 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:bringapp_admin_web_portal/screens/home_screen.dart';
+import 'package:sellers_food_app/admin/screens/home_screen2.dart';
+
+import '../screens/home_screen2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -37,7 +39,7 @@ class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: ((context) => const HomeScreen()),
+              builder: ((context) => const AdminHomeScreen()),
             ),
           );
         },

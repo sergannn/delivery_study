@@ -1,8 +1,9 @@
-import 'package:bringapp_admin_web_portal/screens/home_screen.dart';
+import '../screens/home_screen2.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../screens/home_screen.dart';
 import '../widgets/simple_app_bar.dart';
 
 class DeactiveUsersScreen extends StatefulWidget {
@@ -63,7 +64,7 @@ class _DeactiveUsersScreenState extends State<DeactiveUsersScreen> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: ((context) => const HomeScreen())));
+                          builder: ((context) => const AdminHomeScreen())));
                   SnackBar snackBar = SnackBar(
                     content: Text(
                       "Разблокирован",
@@ -72,7 +73,7 @@ class _DeactiveUsersScreenState extends State<DeactiveUsersScreen> {
                         color: Colors.black,
                       ),
                     ),
-                    backgroundColor: Colors.blue.shade900,
+                    backgroundColor: Colors.indigo,
                     duration: Duration(seconds: 2),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);

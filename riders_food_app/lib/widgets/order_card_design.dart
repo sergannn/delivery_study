@@ -143,7 +143,7 @@ Widget placedOrderDesignWidget(
                       seperateQuantitiesList,
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,//color:Colors.white,
                           fontWeight: FontWeight.bold,
                           color: Colors.grey,
                         ),

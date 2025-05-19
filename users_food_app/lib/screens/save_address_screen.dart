@@ -116,7 +116,7 @@ class SaveAddressScreen extends StatelessWidget {
             ListTile(
               leading: const Icon(
                 Icons.person_pin_circle,
-                color: Colors.red,
+                color: Colors.blue,
                 size: 35,
               ),
               title: SizedBox(
@@ -143,7 +143,7 @@ class SaveAddressScreen extends StatelessWidget {
               ),
               icon: const Icon(
                 Icons.location_on,
-                color: Colors.red,
+                color: Colors.blue,
               ),
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(

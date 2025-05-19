@@ -154,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(30),
-                      backgroundColor: Colors.blue.shade900),
+                      backgroundColor: Colors.indigo),
                 ),
                 const SizedBox(width: 10),
                 //deactivate user
@@ -248,7 +248,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(30),
-                      backgroundColor: Colors.blue.shade900),
+                      backgroundColor: Colors.indigo),
                 )
               ],
             ),
@@ -285,7 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(30),
-                      backgroundColor: Colors.blue.shade900),
+                      backgroundColor: Colors.indigo),
                 ),
                 const SizedBox(width: 10),
                 //deactivate user

@@ -54,10 +54,12 @@ class _NewOrdersScreenState extends State<NewOrdersScreen> {
                             .where("itemID",
                                 whereIn: separateOrderItemIDs(
                                     (snapshot.data!.docs[index].data()!
-                                        as Map<String, dynamic>)["productIDs"]))
+                                        as Map<String, dynamic>)["productIDs"])
+                                        .cast<String>())
                             .where("sellerUID",
                                 whereIn: (snapshot.data!.docs[index].data()!
-                                    as Map<String, dynamic>)["uid"])
+                                         as Map<String, dynamic>)["uid"] as List<String>) // Add cas
+                                  //  as Map<String, dynamic>)["uid"])
                             .orderBy("publishedDate", descending: true)
                             .get(),
                         builder: (c, snap) {

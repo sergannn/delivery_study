@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:bringapp_admin_web_portal/authentication/login_screen.dart';
-import 'package:bringapp_admin_web_portal/riders/activate_riders_screen.dart';
-import 'package:bringapp_admin_web_portal/riders/deactivate_riders_screen.dart';
-import 'package:bringapp_admin_web_portal/sellers/deactivate_sellers_screen.dart';
-import 'package:bringapp_admin_web_portal/users/active_users_screen.dart';
+import '../authentication/login_screen.dart';
+import '../riders/activate_riders_screen.dart';
+import '../riders/deactivate_riders_screen.dart';
+import '../sellers/deactivate_sellers_screen.dart';
+import '../users/active_users_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -154,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(30),
-                      backgroundColor: Colors.blue.shade900),
+                      backgroundColor: Colors.indigo),
                 ),
                 const SizedBox(width: 10),
                 //deactivate user
@@ -248,7 +248,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(30),
-                      backgroundColor: Colors.blue.shade900),
+                      backgroundColor: Colors.indigo),
                 )
               ],
             ),
@@ -285,7 +285,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   style: ElevatedButton.styleFrom(
                       padding: const EdgeInsets.all(30),
-                      backgroundColor: Colors.blue.shade900),
+                      backgroundColor: Colors.indigo),
                 ),
                 const SizedBox(width: 10),
                 //deactivate user

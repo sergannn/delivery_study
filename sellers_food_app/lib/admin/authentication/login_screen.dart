@@ -1,4 +1,4 @@
-import 'package:bringapp_admin_web_portal/screens/home_screen.dart';
+import '../screens/home_screen2.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
               color: Colors.black,
             ),
           ),
-          backgroundColor: Colors.blue.shade900,
+          backgroundColor: Colors.indigo,
           duration: const Duration(seconds: 5),
         );
         ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
           //if records exist send admin to homescreen
           if (snap.exists) {
             Navigator.push(
-                context, MaterialPageRoute(builder: (c) => const HomeScreen()));
+                context, MaterialPageRoute(builder: (c) => const AdminHomeScreen()));
           } else {
             SnackBar snackBar = SnackBar(
               content: Text(
@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   color: Colors.black,
                 ),
               ),
-              backgroundColor: Colors.blue.shade900,
+              backgroundColor: Colors.indigo,
               duration: Duration(seconds: 4),
             );
             ScaffoldMessenger.of(context).showSnackBar(snackBar);

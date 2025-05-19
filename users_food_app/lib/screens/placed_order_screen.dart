@@ -115,7 +115,7 @@ class _PlacedOrderScreenState extends State<PlacedOrderScreen> {
                   end: Alignment.bottomRight,
                   stops: [0.0, 1.0],
                   colors: [
-                    Colors.blue.shade900,
+                    Colors.indigo,
                     Colors.black,
                   ],
                 ),

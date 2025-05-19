@@ -204,7 +204,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                           children: const [
                             Icon(
                               Icons.delete,
-                              color: Colors.red,
+                              color: Colors.blue,
                               size: 40,
                             ),
                           ],

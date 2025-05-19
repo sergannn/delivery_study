@@ -72,7 +72,7 @@ class _DeactiveUsersScreenState extends State<DeactiveUsersScreen> {
                         color: Colors.black,
                       ),
                     ),
-                    backgroundColor: Colors.blue.shade900,
+                    backgroundColor: Colors.indigo,
                     duration: Duration(seconds: 2),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);

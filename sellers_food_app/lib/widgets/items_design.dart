@@ -43,7 +43,7 @@ class _ItemsDesignState extends State<ItemsDesign> {
                     textStyle: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
-                      color: Colors.blue.shade900.shade900,
+                      color: Colors.indigo.shade900,
                     ),
                   ),
                   textAlign: TextAlign.center,

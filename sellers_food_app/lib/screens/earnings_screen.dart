@@ -89,7 +89,7 @@
 //               //             builder: ((context) => const SplashScreen())));
 //               //   },
 //               //   child: Card(
-//               //     color: Colors.blue.shade900.withOpacity(0.8),
+//               //     color: Colors.indigo.withOpacity(0.8),
 //               //     margin: const EdgeInsets.symmetric(
 //               //       vertical: 40,
 //               //       horizontal: 140,

@@ -42,7 +42,7 @@ class _SellerInfoState extends State<SellerInfo> {
           end: FractionalOffset(5.0, -6.0),
           colors: [
             Color(0xFFFFFFFF),
-            Color(0xFFFAC898),
+            Color.fromARGB(255, 79, 180, 211),
           ],
         ),
       ),
@@ -69,7 +69,7 @@ class _SellerInfoState extends State<SellerInfo> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.blue.shade900.withOpacity(0.4),
+                      color: Colors.indigo.withOpacity(0.4),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     padding: const EdgeInsets.all(5),

@@ -72,7 +72,7 @@ class _ActiveSellersScreenState extends State<ActiveSellersScreen> {
                         color: Colors.black,
                       ),
                     ),
-                    backgroundColor: Colors.blue.shade900,
+                    backgroundColor: Colors.indigo,
                     duration: Duration(seconds: 2),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -200,7 +200,7 @@ class _ActiveSellersScreenState extends State<ActiveSellersScreen> {
                     padding: const EdgeInsets.all(20.0),
                     child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                        backgroundColor: Colors.blue,
                       ),
                       onPressed: () {
                         displayDialogBoxForBlockingAccount(

@@ -210,7 +210,7 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
             const Icon(Icons.warning, color: Colors.orange),
             const SizedBox(height: 10),
             Text('Загрузка не удалась', style: TextStyle(color: Colors.grey[600])),
-            Text(error, style: const TextStyle(color: Colors.red, fontSize: 12)),
+            Text(error, style: const TextStyle(color: Colors.blue, fontSize: 12)),
           ],
         ),
       ),

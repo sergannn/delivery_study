@@ -72,7 +72,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
                         color: Colors.black,
                       ),
                     ),
-                    backgroundColor: Colors.blue.shade900,
+                    backgroundColor: Colors.indigo,
                     duration: Duration(seconds: 2),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -165,7 +165,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
                     padding: const EdgeInsets.all(20.0),
                     child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue.shade900,
+                        backgroundColor: Colors.indigo,
                       ),
                       onPressed: () {
                         SnackBar snackBar = SnackBar(

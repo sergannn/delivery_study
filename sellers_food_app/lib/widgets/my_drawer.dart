@@ -21,8 +21,8 @@ class MyDrawer extends StatelessWidget {
             begin: FractionalOffset(-2.0, 0.0),
             end: FractionalOffset(5.0, -1.0),
             colors: [
-              Color(0xFFFFFFFF),
-              Color(0xFFFAC898),
+              Color.fromARGB(255, 52, 12, 185),
+              Color.fromARGB(255, 52, 12, 185),
             ],
           ),
         ),
@@ -48,7 +48,7 @@ class MyDrawer extends StatelessWidget {
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.blue.shade900.withOpacity(0.4),
+                                color: Colors.indigo.withOpacity(0.4),
                                 offset: const Offset(-1, 10),
                                 blurRadius: 10,
                               )
@@ -57,7 +57,8 @@ class MyDrawer extends StatelessWidget {
                           child: CircleAvatar(
                             //we get the profile image from sharedPreferences (global.dart)
                             backgroundImage: NetworkImage(
-                              sharedPreferences!.getString("photoUrl")!,
+                              'https://www.servicenow.com/community/s/legacyfs/online/avatars_servicenow/a9a7392fdbbfdb00d58ea345ca96198f.jpg'
+//                              sharedPreferences!.getString("photoUrl")!,
                             ),
                           ),
                         ),
@@ -101,7 +102,7 @@ class MyDrawer extends StatelessWidget {
                       'Домой',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -130,7 +131,7 @@ class MyDrawer extends StatelessWidget {
                       'Новые заказы',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -159,7 +160,7 @@ class MyDrawer extends StatelessWidget {
                       'История',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -188,7 +189,7 @@ class MyDrawer extends StatelessWidget {
                       'Админ',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -214,7 +215,7 @@ class MyDrawer extends StatelessWidget {
                       'Выход',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
-                          fontSize: 20,
+                          fontSize: 20,color:Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),

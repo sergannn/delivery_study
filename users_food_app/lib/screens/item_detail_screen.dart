@@ -123,19 +123,19 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(10)),
                               border: Border.all(
-                                color: Colors.blue.shade900,
+                                color: Colors.indigo,
                                 width: 2,
                               ),
                             ),
                             incIconDecoration: const BoxDecoration(
-                              color: Colors.blue.shade900,
+                              color: Colors.indigo,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(10),
                               ),
                             ),
                             separateIcons: true,
                             decIconDecoration: const BoxDecoration(
-                              color: Colors.blue.shade900,
+                              color: Colors.indigo,
                               borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10),
                               ),
@@ -251,7 +251,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                                 end: Alignment.bottomRight,
                                 stops: [0.0, 1.0],
                                 colors: [
-                                  Colors.blue.shade900,
+                                  Colors.indigo,
                                   Colors.black,
                                 ],
                               ),

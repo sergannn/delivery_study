@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   begin: FractionalOffset(1.0, -1.0),
                   end: FractionalOffset(-1.0, -1.0),
                   colors: [
-                    Colors.blue.shade900,
+                    Colors.indigo,
                     Colors.blueAccent,
                   ],
                 ),
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   end: FractionalOffset(5.0, -1.0),
                   colors: [
                     Colors.blueAccent,
-                    Colors.blue.shade900,
+                    Colors.indigo,
                   ],
                 ),
                 boxShadow: const [
@@ -218,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.blue.shade900.withOpacity(1),
+                          color: Colors.indigo.withOpacity(1),
                           offset: const Offset(-1, 2),
                           blurRadius: 20,
                         )
@@ -255,12 +255,12 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisCount: 2,
           padding: const EdgeInsets.all(2),
           children: [
-            makeDashboardItem("New Available", Icons.assignment, 0),
-            makeDashboardItem("Parcels in Progress", Icons.airport_shuttle, 1),
-            makeDashboardItem("Not Yet Delivered", Icons.location_history, 2),
-            makeDashboardItem("History", Icons.done_all, 3),
-            makeDashboardItem("Total Earnings", Icons.monetization_on, 4),
-            makeDashboardItem("Logout", Icons.logout, 5),
+            makeDashboardItem("Новые заказы", Icons.assignment, 0),
+            makeDashboardItem("В процессе", Icons.airport_shuttle, 1),
+            makeDashboardItem("Не доставлено", Icons.location_history, 2),
+            makeDashboardItem("История", Icons.done_all, 3),
+            makeDashboardItem("Доход", Icons.monetization_on, 4),
+            makeDashboardItem("Выход", Icons.logout, 5),
           ],
         ),
       ),

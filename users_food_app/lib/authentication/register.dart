@@ -301,7 +301,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       end: Alignment.bottomRight,
                       stops: [0.0, 1.0],
                       colors: [
-                        Colors.blue.shade900,
+                        Colors.indigo,
                         Colors.black,
                       ],
                     ),
@@ -343,7 +343,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Text.rich(
                   TextSpan(
                     children: [
-                      const TextSpan(text: "Already have an account? "),
+                      const TextSpan(text: "Уже есть аккаунт? "),
                       TextSpan(
                         text: 'Login',
                         recognizer: TapGestureRecognizer()

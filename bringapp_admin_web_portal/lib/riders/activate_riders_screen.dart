@@ -72,7 +72,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
                         color: Colors.black,
                       ),
                     ),
-                    backgroundColor: Colors.blue.shade900,
+                    backgroundColor: Colors.indigo,
                     duration: Duration(seconds: 2),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
@@ -200,7 +200,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
                     padding: const EdgeInsets.all(20.0),
                     child: ElevatedButton.icon(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
+                        backgroundColor: Colors.blue,
                       ),
                       onPressed: () {
                         displayDialogBoxForBlockingAccount(
@@ -243,7 +243,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
     return Scaffold(
       backgroundColor: const Color(0xff1b232A),
       appBar: SimpleAppBar(
-        title: "All Active Riders",
+        title: "Курьеры",
       ),
       body: Center(
         child: SizedBox(

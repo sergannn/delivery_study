@@ -72,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 49, 47, 45),
+      backgroundColor: Color.fromARGB(255, 23, 20, 144),
       body: Stack(
         children: [
           // White Container top half
@@ -152,11 +152,11 @@ class _BottomPart extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Продукты для вас',
+              'Продукты для вас!',
               style: GoogleFonts.lato(
                 fontSize: 27,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
             const SizedBox(height: 30.0),
@@ -166,7 +166,7 @@ class _BottomPart extends StatelessWidget {
               style: GoogleFonts.lato(
                 fontSize: 15,
                 fontWeight: FontWeight.normal,
-                color: Colors.black.withOpacity(0.8),
+                color: Colors.white.withOpacity(0.8),
                 height: 1.5,
               ),
             ),
@@ -179,6 +179,7 @@ class _BottomPart extends StatelessWidget {
                   Text(
                     "Логин ".toUpperCase(),
                     style: GoogleFonts.lato(
+                      color: Colors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),

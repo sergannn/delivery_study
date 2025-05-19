@@ -1,5 +1,5 @@
-import 'package:bringapp_admin_web_portal/authentication/login_screen.dart';
-import 'package:bringapp_admin_web_portal/screens/home_screen.dart';
+import 'authentication/login_screen.dart';
+import 'screens/home_screen2.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
         ))),
         home: //FirebaseAuth.instance.currentUser == null
             const LoginScreen()
-        //    const HomeScreen(),
+        //    const AdminHomeScreen(),
         );
   }
 }

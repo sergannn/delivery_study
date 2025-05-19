@@ -46,7 +46,7 @@ class _AddressScreenState extends State<AddressScreen> {
             ),
           ),
         ),
-        backgroundColor: Colors.blue.shade900,
+        backgroundColor: Colors.indigo,
         icon: const Icon(
           Icons.add_location,
           color: Colors.white,
