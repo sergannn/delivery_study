@@ -12,14 +12,14 @@ import 'package:intl/intl.dart';
 import '../sellers/activate_sellers_screen.dart';
 import '../users/deactivate_users_screen.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class AdminHomeScreen extends StatefulWidget {
+  const AdminHomeScreen({Key? key}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends State<AdminHomeScreen> {
   String timeText = '';
   String dateText = '';
 

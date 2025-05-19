@@ -6,7 +6,7 @@ import 'package:sellers_food_app/screens/home_screen.dart';
 import 'package:sellers_food_app/screens/new_orders_screen.dart';
 
 import '../global/global.dart';
-
+import '../admin/screens/home_screen2.dart';//sellers_food_app/lib/admin/screens/home_screen2.dart
 class MyDrawer extends StatelessWidget {
   final TextEditingController _controller = TextEditingController();
 
@@ -48,7 +48,7 @@ class MyDrawer extends StatelessWidget {
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.amber.withOpacity(0.4),
+                                color: Colors.blue.shade900.withOpacity(0.4),
                                 offset: const Offset(-1, 10),
                                 blurRadius: 10,
                               )
@@ -177,6 +177,32 @@ class MyDrawer extends StatelessWidget {
                     height: 10,
                     color: Colors.white,
                     thickness: 2,
+                  ),
+                   ListTile(
+                    leading: const Icon(
+                      Icons.exit_to_app,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                    title: Text(
+                      'Админ',
+                      style: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                     
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (c) => const AdminHomeScreen(),
+                          ),
+                        );
+                    
+                    },
                   ),
                   ListTile(
                     leading: const Icon(

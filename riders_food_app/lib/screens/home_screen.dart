@@ -35,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   begin: FractionalOffset(1.0, -1.0),
                   end: FractionalOffset(-1.0, -1.0),
                   colors: [
-                    Colors.amber,
-                    Colors.orangeAccent,
+                    Colors.blue.shade900,
+                    Colors.blueAccent,
                   ],
                 ),
                 boxShadow: const [
@@ -53,8 +53,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   begin: FractionalOffset(-1.0, 0.0),
                   end: FractionalOffset(5.0, -1.0),
                   colors: [
-                    Colors.orangeAccent,
-                    Colors.amber,
+                    Colors.blueAccent,
+                    Colors.blue.shade900,
                   ],
                 ),
                 boxShadow: const [
@@ -218,7 +218,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.amber.withOpacity(1),
+                          color: Colors.blue.shade900.withOpacity(1),
                           offset: const Offset(-1, 2),
                           blurRadius: 20,
                         )

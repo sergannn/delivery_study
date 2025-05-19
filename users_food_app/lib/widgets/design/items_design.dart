@@ -51,7 +51,7 @@ class _ItemsDesignWidgetState extends State<ItemsDesignWidget> {
                   textStyle: TextStyle(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
-                    color: Colors.amber.shade900,
+                    color: Colors.blue.shade900.shade900,
                   ),
                 ),
                 textAlign: TextAlign.center,

@@ -69,7 +69,7 @@ class _SellerInfoState extends State<SellerInfo> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.amber.withOpacity(0.4),
+                      color: Colors.blue.shade900.withOpacity(0.4),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     padding: const EdgeInsets.all(5),

@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         title: 'Для пользователей',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.amber,
+          primarySwatch: Colors.blue.shade900,
         ),
         home: const SplashScreen(),
       ),

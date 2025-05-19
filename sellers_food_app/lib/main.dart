@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Для продавцов',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        primarySwatch: Colors.blue.shade900,
       ),
       home: const SplashScreen(),
     );

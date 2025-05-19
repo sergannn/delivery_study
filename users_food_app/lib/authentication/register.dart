@@ -301,7 +301,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       end: Alignment.bottomRight,
                       stops: [0.0, 1.0],
                       colors: [
-                        Colors.amber,
+                        Colors.blue.shade900,
                         Colors.black,
                       ],
                     ),

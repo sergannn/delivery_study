@@ -238,7 +238,7 @@ class _AddressDesignState extends State<AddressDesign> {
                   },
                   child: const Text("Проверить на карте"),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.amber,
+                    backgroundColor: Colors.blue.shade900,
                   ),
                 ),
                 //button

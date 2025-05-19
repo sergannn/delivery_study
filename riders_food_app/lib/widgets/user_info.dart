@@ -50,7 +50,7 @@ class _RiderInformationState extends State<RiderInformation> {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.amber.withOpacity(0.4),
+                      color: Colors.blue.shade900.withOpacity(0.4),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     padding: const EdgeInsets.all(5),
