@@ -35,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   begin: FractionalOffset(1.0, -1.0),
                   end: FractionalOffset(-1.0, -1.0),
                   colors: [
-                    Colors.indigo,
-                    Colors.blueAccent,
+                    Color.fromARGB(255, 44, 94, 151),
+                    const Color.fromARGB(255, 66, 136, 215),
                   ],
                 ),
                 boxShadow: const [

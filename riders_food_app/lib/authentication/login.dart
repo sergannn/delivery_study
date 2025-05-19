@@ -141,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
             end: FractionalOffset(5.0, -1.0),
             colors: [
               Color(0xFFFFFFFF),
-              Color(0xFFFAC898),
+              const Color.fromARGB(255, 66, 136, 215),
             ],
           ),
         ),
@@ -214,11 +214,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           end: Alignment.bottomRight,
                           stops: [0.0, 1.0],
                           colors: [
-                            Colors.indigo,
+                            const Color.fromARGB(255, 66, 136, 215),
                             Colors.black,
                           ],
                         ),
-                        color: Colors.deepPurple.shade300,
+                        color: Colors.blue.shade300,
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: ElevatedButton(
