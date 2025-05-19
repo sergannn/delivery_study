@@ -48,7 +48,7 @@ class _MenusUploadScreenState extends State<MenusUploadScreen> {
           ),
         ),
         title: Text(
-          "Add New Menu".toUpperCase(),
+          "Добавить меню".toUpperCase(),
           style: GoogleFonts.lato(
             textStyle: const TextStyle(
               fontSize: 20,
@@ -100,7 +100,7 @@ class _MenusUploadScreenState extends State<MenusUploadScreen> {
                   takeImage(context);
                 },
                 child: const Text(
-                  "Add New Menu",
+                  "Добавить меню",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -129,21 +129,21 @@ class _MenusUploadScreenState extends State<MenusUploadScreen> {
         builder: (c) {
           return SimpleDialog(
             title: const Text(
-              "Menu Image",
+              "Изображение",
               style:
                   TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
             ),
             children: [
               SimpleDialogOption(
                 child: const Text(
-                  "Capture with Camera",
+                  "Снять с камеры",
                   style: TextStyle(color: Colors.grey),
                 ),
                 onPressed: captureImageWithCamera,
               ),
               SimpleDialogOption(
                 child: const Text(
-                  "Select from Gallery",
+                  "Выбрать фото",
                   style: TextStyle(color: Colors.grey),
                 ),
                 onPressed: pickImageFromGallery,
@@ -151,7 +151,7 @@ class _MenusUploadScreenState extends State<MenusUploadScreen> {
               SimpleDialogOption(
                 child: const Center(
                   child: Text(
-                    "Cancel",
+                    "Отменить",
                     style: TextStyle(color: Colors.red),
                   ),
                 ),
@@ -205,7 +205,7 @@ class _MenusUploadScreenState extends State<MenusUploadScreen> {
           ),
         ),
         title: Text(
-          "New Menu Form",
+          "Новое меню",
           style: GoogleFonts.lato(
             textStyle: const TextStyle(
               fontSize: 20,
@@ -231,7 +231,7 @@ class _MenusUploadScreenState extends State<MenusUploadScreen> {
                 //we check if uploading is null (otherwise if user clicks more than 1 time it will upload more than 1 time)
                 uploading ? null : () => validateUploadForm(),
             child: Text(
-              "Add".toUpperCase(),
+              "Добавить".toUpperCase(),
               style: GoogleFonts.lato(
                 textStyle: const TextStyle(
                     fontSize: 15,

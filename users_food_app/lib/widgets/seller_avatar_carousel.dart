@@ -56,8 +56,10 @@ class _SellerCarouselWidgetState extends State<SellerCarouselWidget> {
                   padding: const EdgeInsets.all(1.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
-                    child: Image.network(
-                      'https://s.restorating.ru/places/3840x2160/places/42655/62fcb3f1afd63.jpg',
+                    child: 
+                    Image.asset("images/restaurant.png",
+//                    Image.network(
+//                      'https://s.restorating.ru/places/3840x2160/places/42655/62fcb3f1afd63.jpg',
 //                      document['sellerAvatarUrl'],
                       fit: BoxFit.fill,
                       height: 190,

@@ -160,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 50),
               Center(
                 child: Text(
-                  'Riders Login',
+                  'Вход для курьеров',
                   style: GoogleFonts.lato(
                     textStyle: const TextStyle(
                         fontSize: 25,
@@ -194,7 +194,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           // Navigator.push( context, MaterialPageRoute( builder: (context) => ForgotPasswordPage()), );
                         },
                         child: const Text(
-                          "Forgot your password?",
+                          "Забыли пароль?",
                           style: TextStyle(
                             color: Colors.grey,
                           ),
@@ -239,7 +239,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Padding(
                           padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
                           child: Text(
-                            'Sign In'.toUpperCase(),
+                            'Войти'.toUpperCase(),
                             style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,

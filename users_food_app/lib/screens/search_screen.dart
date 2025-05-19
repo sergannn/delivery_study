@@ -93,7 +93,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         context: context,
                       );
                     })
-                : const Center(child: Text("No Record Found"));
+                : const Center(child: Text("Не найдено"));
           },
         ),
       ),

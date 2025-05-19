@@ -30,7 +30,7 @@ class SimpleAppBar extends StatelessWidget {
         ),
       ),
       title: Text(
-        "Item Details",
+        "Подробности",
         style: GoogleFonts.lato(
           textStyle: const TextStyle(
             fontSize: 20,

@@ -177,13 +177,13 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
         children: [
           const Icon(Icons.error, size: 50, color: Colors.red),
           const SizedBox(height: 20),
-          Text('Error loading orders', style: Theme.of(context).textTheme.bodyLarge),
+          Text('Ошибка загрузки', style: Theme.of(context).textTheme.bodyLarge),
           const SizedBox(height: 10),
           Text(error, textAlign: TextAlign.center),
           const SizedBox(height: 20),
           ElevatedButton(
             onPressed: () => setState(() {}),
-            child: const Text('Retry'),
+            child: const Text('Повторить'),
           ),
         ],
       ),
@@ -193,7 +193,7 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
   Widget _buildEmptyOrdersWidget() {
     debugPrint('Displaying empty orders widget');
     return const Center(
-      child: Text('No orders found', style: TextStyle(fontSize: 18)),
+      child: Text('Не найдено', style: TextStyle(fontSize: 18)),
     );
   }
 
@@ -205,11 +205,11 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            Text('Order #$orderId', style: const TextStyle(fontWeight: FontWeight.bold)),
+            Text('Заказ #$orderId', style: const TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
             const Icon(Icons.warning, color: Colors.orange),
             const SizedBox(height: 10),
-            Text('Could not load order items', style: TextStyle(color: Colors.grey[600])),
+            Text('Загрузка не удалась', style: TextStyle(color: Colors.grey[600])),
             Text(error, style: const TextStyle(color: Colors.red, fontSize: 12)),
           ],
         ),
@@ -225,11 +225,11 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            Text('Order #$orderId', style: const TextStyle(fontWeight: FontWeight.bold)),
+            Text('Заказ #$orderId', style: const TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 20),
             const CircularProgressIndicator(),
             const SizedBox(height: 10),
-            const Text('Loading order items...'),
+            const Text('Загрузка...'),
           ],
         ),
       ),
@@ -244,11 +244,11 @@ class _MyOrdersScreenState extends State<MyOrdersScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            Text('Order #$orderId', style: const TextStyle(fontWeight: FontWeight.bold)),
+            Text('Заказ #$orderId', style: const TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
             const Icon(Icons.info, color: Colors.blue),
             const SizedBox(height: 10),
-            const Text('No items found for this order'),
+            const Text('Заказ пустой'),
           ],
         ),
       ),

@@ -15,7 +15,7 @@ class ShipmentAddressDesign extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            "Shipping Details: ",
+            "Подробности: ",
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.bold,
@@ -31,7 +31,7 @@ class ShipmentAddressDesign extends StatelessWidget {
               TableRow(
                 children: [
                   const Text(
-                    "-Name",
+                    "-Имя",
                     style: TextStyle(
                       color: Colors.black,
                     ),
@@ -42,7 +42,7 @@ class ShipmentAddressDesign extends StatelessWidget {
               TableRow(
                 children: [
                   const Text(
-                    "-Phone Number",
+                    "-Телефон",
                     style: TextStyle(
                       color: Colors.black,
                     ),
@@ -88,7 +88,7 @@ class ShipmentAddressDesign extends StatelessWidget {
                 height: 50,
                 child: const Center(
                     child: Text(
-                  "Go back",
+                  "Назад",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 15,

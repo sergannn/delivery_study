@@ -28,7 +28,7 @@ class _InfoDesignWidgetState extends State<InfoDesignWidget> {
         .doc(menuID)
         .delete();
 
-    Fluttertoast.showToast(msg: "Menu Deleted");
+    Fluttertoast.showToast(msg: "Меню удалено");
   }
 
   @override

@@ -21,7 +21,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            "Unblock Account",
+            "Разблокировать",
             style: GoogleFonts.lato(
               textStyle: const TextStyle(
                 fontSize: 25,
@@ -32,7 +32,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
             ),
           ),
           content: Text(
-            "Do you want to unblock this account ?",
+            "Разблокировать ?",
             style: GoogleFonts.lato(
               textStyle: const TextStyle(
                 fontSize: 16,
@@ -46,7 +46,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text("No"),
+              child: const Text("Нет"),
             ),
             ElevatedButton(
               onPressed: () {
@@ -66,7 +66,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
                           builder: ((context) => const HomeScreen())));
                   SnackBar snackBar = const SnackBar(
                     content: Text(
-                      "User has been unBlocked",
+                      "Юзер разблокирован",
                       style: TextStyle(
                         fontSize: 36,
                         color: Colors.black,
@@ -78,7 +78,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 });
               },
-              child: const Text("Yes"),
+              child: const Text("Да"),
             ),
           ],
         );
@@ -170,7 +170,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
                       onPressed: () {
                         SnackBar snackBar = SnackBar(
                           content: Text(
-                            "Earnings: ".toUpperCase() +
+                            "Доходы: ".toUpperCase() +
                                 "\$" +
                                 allusers!.docs[i].get("earnings").toString(),
                             style: const TextStyle(
@@ -208,7 +208,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
                       },
                       icon: const Icon(Icons.check_box),
                       label: Text(
-                        "Activate".toUpperCase(),
+                        "Активировать".toUpperCase(),
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
                             fontSize: 15,
@@ -227,7 +227,7 @@ class _DeactiveRidersScreenState extends State<DeactiveRidersScreen> {
       } else {
         return Center(
           child: Text(
-            "No record found!",
+            "Не найдено!",
             style: GoogleFonts.lato(
               textStyle: const TextStyle(
                 fontSize: 30,

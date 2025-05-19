@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Restaurants', style: GoogleFonts.lato()),
+        title: Text('Рестораны', style: GoogleFonts.lato()),
         backgroundColor: const Color(0xFFFAC898),
         actions: [
           IconButton(
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'All Restaurants',
+                    'Все рестораны',
                     style: GoogleFonts.lato(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (snapshot.data!.docs.isEmpty) {
                     return const Padding(
                       padding: EdgeInsets.all(16.0),
-                      child: Text('No restaurants available'),
+                      child: Text('Нет доступных ресторанов'),
                     );
                   }
                   

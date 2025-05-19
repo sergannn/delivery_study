@@ -104,7 +104,7 @@ class _ParcelPickingScreenState extends State<ParcelPickingScreen> {
                   children: const [
                     SizedBox(height: 12),
                     Text(
-                      "Show Cafe/Restaurant Location",
+                      "Показать адрес ресторана",
                       style: TextStyle(
                         fontFamily: "Signatra",
                         fontSize: 20,
@@ -149,7 +149,7 @@ class _ParcelPickingScreenState extends State<ParcelPickingScreen> {
                   height: 50,
                   child: const Center(
                       child: Text(
-                    "Confirmed",
+                    "Подтверждено",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,

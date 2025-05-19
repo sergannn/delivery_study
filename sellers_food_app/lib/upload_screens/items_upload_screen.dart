@@ -53,7 +53,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
           ),
         ),
         title: Text(
-          "Add New Items"+widget.model.toString(),
+          "Добавить"+widget.model.toString(),
           style: GoogleFonts.lato(
             textStyle: const TextStyle(
               fontSize: 25,
@@ -93,7 +93,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
                   takeImage(context);
                 },
                 child: Text(
-                  "Add New Item",
+                  "Добавить",
                   style: GoogleFonts.lato(
                     textStyle: const TextStyle(
                       fontSize: 20,
@@ -124,21 +124,21 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
         builder: (c) {
           return SimpleDialog(
             title: const Text(
-              "Menu Image",
+              "Изображение меню",
               style:
                   TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
             ),
             children: [
               SimpleDialogOption(
                 child: const Text(
-                  "Capture with Camera",
+                  "Снять с камеры",
                   style: TextStyle(color: Colors.grey),
                 ),
                 onPressed: captureImageWithCamera,
               ),
               SimpleDialogOption(
                 child: const Text(
-                  "Select from Gallery",
+                  "Выбрать из галереи",
                   style: TextStyle(color: Colors.grey),
                 ),
                 onPressed: pickImageFromGallery,
@@ -146,7 +146,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
               SimpleDialogOption(
                 child: const Center(
                   child: Text(
-                    "Cancel",
+                    "Отменить",
                     style: TextStyle(color: Colors.red),
                   ),
                 ),
@@ -200,7 +200,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
           ),
         ),
         title: Text(
-          "New Item Form ${widget.model}",
+          "Форма добавления ${widget.model}",
           style: GoogleFonts.lato(
             textStyle: const TextStyle(
               fontSize: 20,
@@ -226,7 +226,7 @@ class _ItemsUploadScreenState extends State<ItemsUploadScreen> {
                 //we check if uploading is null (otherwise if user clicks more than 1 time it will upload more than 1 time)
                 uploading ? null : () => validateUploadForm(),
             child: Text(
-              "Add",
+              "Добавить",
               style: GoogleFonts.lato(
                 textStyle: const TextStyle(
                     fontSize: 15,

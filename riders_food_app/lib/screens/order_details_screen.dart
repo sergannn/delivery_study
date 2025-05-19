@@ -71,7 +71,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              "Total Amount: "
+                              "Всего: "
                                       "\$ " +
                                   dataMap["totalAmount"].toString(),
                               style: const TextStyle(
@@ -84,7 +84,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            "Order ID: " + widget.orderID!,
+                            "Заказ ID: " + widget.orderID!,
                             style: const TextStyle(fontSize: 16),
                           ),
                         ),

@@ -32,12 +32,12 @@ class _AddressScreenState extends State<AddressScreen> {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SimpleAppBar(
-          title: "Address",
+          title: "Адрес",
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         label: Text(
-          "Add New Address",
+          "Добавить новый адрес",
           style: GoogleFonts.lato(
             textStyle: const TextStyle(
               fontSize: 15,
@@ -81,7 +81,7 @@ class _AddressScreenState extends State<AddressScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(8),
                 child: Text(
-                  "Select Address:",
+                  "Выбрать адрес:",
                   style: GoogleFonts.lato(
                     textStyle: const TextStyle(
                       fontSize: 20,

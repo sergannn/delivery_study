@@ -21,7 +21,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            "Block Account",
+            "Блокировать аккаунт",
             style: GoogleFonts.lato(
               textStyle: const TextStyle(
                 fontSize: 25,
@@ -32,7 +32,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
             ),
           ),
           content: Text(
-            "Do you want to block this account ?",
+            "Уверены?",
             style: GoogleFonts.lato(
               textStyle: const TextStyle(
                 fontSize: 16,
@@ -46,7 +46,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text("No"),
+              child: const Text("Нет"),
             ),
             ElevatedButton(
               onPressed: () {
@@ -66,7 +66,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
                           builder: ((context) => const HomeScreen())));
                   SnackBar snackBar = const SnackBar(
                     content: Text(
-                      "Rider has been Blocked",
+                      "Заблокирован",
                       style: TextStyle(
                         fontSize: 36,
                         color: Colors.black,
@@ -78,7 +78,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 });
               },
-              child: const Text("Yes"),
+              child: const Text("Да"),
             ),
           ],
         );
@@ -170,7 +170,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
                       onPressed: () {
                         SnackBar snackBar = SnackBar(
                           content: Text(
-                            "Earnings: ".toUpperCase() +
+                            "Доходы: ".toUpperCase() +
                                 "\$" +
                                 allusers!.docs[i].get("earnings").toString(),
                             style: const TextStyle(
@@ -208,7 +208,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
                       },
                       icon: const Icon(Icons.disabled_by_default),
                       label: Text(
-                        "Block".toUpperCase(),
+                        "Блокировать".toUpperCase(),
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
                             fontSize: 15,
@@ -227,7 +227,7 @@ class _ActiveRidersScreenState extends State<ActiveRidersScreen> {
       } else {
         return Center(
           child: Text(
-            "No record found!",
+            "Записи не найдены!",
             style: GoogleFonts.lato(
               textStyle: const TextStyle(
                 fontSize: 30,

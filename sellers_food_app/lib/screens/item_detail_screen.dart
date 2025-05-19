@@ -34,7 +34,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
         Navigator.push(context,
             MaterialPageRoute(builder: ((context) => const SplashScreen())));
 
-        Fluttertoast.showToast(msg: "Item Deleted");
+        Fluttertoast.showToast(msg: "Удалено");
       },
     );
   }
@@ -140,7 +140,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Description: ",
+                            "Описание: ",
                             style: GoogleFonts.lato(
                               textStyle: const TextStyle(
                                 fontSize: 20,
@@ -168,7 +168,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                       child: Row(
                         children: [
                           Text(
-                            "Price: ",
+                            "Цена: ",
                             style: GoogleFonts.lato(
                               textStyle: const TextStyle(
                                 fontSize: 20,

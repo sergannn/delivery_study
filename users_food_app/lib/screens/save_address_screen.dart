@@ -85,13 +85,13 @@ class SaveAddressScreen extends StatelessWidget {
                 .doc(DateTime.now().millisecondsSinceEpoch.toString())
                 .set(model)
                 .then((value) {
-              Fluttertoast.showToast(msg: "New Address has been saved.");
+              Fluttertoast.showToast(msg: "Новый адрес добавлен");
 
               formKey.currentState!.reset();
             });
           }
         },
-        label: const Text("Save"),
+        label: const Text("Сохранить"),
         icon: const Icon(
           Icons.check,
         ),
@@ -104,7 +104,7 @@ class SaveAddressScreen extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(8),
                 child: Text(
-                  "Save New Address: ",
+                  "Сохранить новый адрес: ",
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
@@ -138,7 +138,7 @@ class SaveAddressScreen extends StatelessWidget {
             const SizedBox(height: 10),
             ElevatedButton.icon(
               label: const Text(
-                "Get my Address",
+                "Получить адрес",
                 style: TextStyle(color: Colors.white),
               ),
               icon: const Icon(

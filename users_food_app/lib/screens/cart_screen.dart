@@ -115,7 +115,7 @@ class _CartScreenState extends State<CartScreen> {
             child: FloatingActionButton.extended(
               heroTag: "btn1",
               label: const Text(
-                "Clear Cart",
+                "Очистить",
                 style: TextStyle(fontSize: 16),
               ),
               backgroundColor: Colors.amber,
@@ -126,7 +126,7 @@ class _CartScreenState extends State<CartScreen> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (c) => const SplashScreen()));
 
-                Fluttertoast.showToast(msg: "Cart has been cleared.");
+                Fluttertoast.showToast(msg: "Корзина очищена");
               },
             ),
           ),
@@ -135,7 +135,7 @@ class _CartScreenState extends State<CartScreen> {
             child: FloatingActionButton.extended(
               heroTag: "btn2",
               label: const Text(
-                "Check Out",
+                "Подтвердить",
                 style: TextStyle(fontSize: 16),
               ),
               backgroundColor: Colors.amber,
@@ -183,7 +183,7 @@ class _CartScreenState extends State<CartScreen> {
                     child: cartProvider.count == 0
                         ? Container()
                         : Text(
-                            "Total Price: ${"\$" + amountProvider.tAmount.toString()}",
+                            "Общая сумма: ${"\$" + amountProvider.tAmount.toString()}",
                             style: GoogleFonts.lato(
                               textStyle: const TextStyle(
                                 fontSize: 20,

@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         title: const Text(
-          "Admin Web Portal",
+          "Панель администратора",
           style: TextStyle(
             fontSize: 20,
             letterSpacing: 3,
@@ -145,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Color.fromARGB(255, 117, 190, 119),
                   ),
                   label: Text(
-                    "All Active".toUpperCase() + "\n  " + "Users".toUpperCase(),
+                    "Все активные".toUpperCase() + "\n  " + "Пользователи".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -172,9 +172,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.redAccent,
                   ),
                   label: Text(
-                    "Deactivate".toUpperCase() +
+                    "Деактивировать".toUpperCase() +
                         "\n    " +
-                        "Users".toUpperCase(),
+                        "Пользователей".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -208,9 +208,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Color.fromARGB(255, 117, 190, 119),
                   ),
                   label: Text(
-                    "All Active".toUpperCase() +
+                    "Все активные".toUpperCase() +
                         "\n " +
-                        "Sellers".toUpperCase(),
+                        "продавцы".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -237,9 +237,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.redAccent,
                   ),
                   label: Text(
-                    "Deactivate".toUpperCase() +
+                    "Деактивировать".toUpperCase() +
                         "\n    " +
-                        "Sellers".toUpperCase(),
+                        "Продавца".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -274,9 +274,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Color.fromARGB(255, 117, 190, 119),
                   ),
                   label: Text(
-                    "All Active".toUpperCase() +
+                    "Все активные".toUpperCase() +
                         "\n   " +
-                        "Riders".toUpperCase(),
+                        "Курьеры".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -303,9 +303,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.redAccent,
                   ),
                   label: Text(
-                    "Deactivate".toUpperCase() +
+                    "Деактивировать".toUpperCase() +
                         "\n   " +
-                        "Riders".toUpperCase(),
+                        "Курьера".toUpperCase(),
                     style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -334,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.grey,
               ),
               label: Text(
-                "Logout".toUpperCase(),
+                "Выход".toUpperCase(),
                 style: const TextStyle(
                   fontSize: 16,
                   color: Colors.black,

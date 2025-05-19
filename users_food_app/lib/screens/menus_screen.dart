@@ -40,11 +40,11 @@ class _MenusScreenState extends State<MenusScreen> {
           onPressed: () {
             clearCartNow(context);
             Navigator.push(context, MaterialPageRoute(builder: (c) => const SplashScreen()));
-            Fluttertoast.showToast(msg: "Cart has been cleared.");
+            Fluttertoast.showToast(msg: "Очищено");
           },
         ),
         title: Text(
-          "${widget.model!.sellerName} Menus",
+          "${widget.model!.sellerName} Меню",
           style: GoogleFonts.lato(
             fontSize: 25,
             fontWeight: FontWeight.bold,
@@ -75,7 +75,7 @@ class _MenusScreenState extends State<MenusScreen> {
             }
 
             if (snapshot.data!.docs.isEmpty) {
-              return  Center(child: Text("No menus available"+widget.model!.toJson().toString()));
+              return  Center(child: Text("Меню отутствуют "+widget.model!.toJson().toString()));
             }
 
             return Padding(

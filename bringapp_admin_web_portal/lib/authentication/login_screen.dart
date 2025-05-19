@@ -18,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
     //1.display checking loading ...
     SnackBar snackBar = const SnackBar(
       content: Text(
-        "Loading...",
+        "Загрузка...",
         style: TextStyle(
           fontSize: 36,
           color: Colors.black,
@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
         //display error message
         final snackBar = SnackBar(
           content: Text(
-            "Error Occured: " + onError.toString(),
+            "Ошибка: " + onError.toString(),
             style: const TextStyle(
               fontSize: 36,
               color: Colors.black,
@@ -74,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
           } else {
             SnackBar snackBar = const SnackBar(
               content: Text(
-                "No record found!" "\n" "You are not an Admin!",
+                "Записи не найдены!" "\n" "Вы не админ!",
                 style: TextStyle(
                   fontSize: 36,
                   color: Colors.black,
@@ -175,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         allowAdminToLogin();
                       },
                       child: const Text(
-                        "Login",
+                        "Войти",
                         style: TextStyle(
                           color: Colors.white,
                           letterSpacing: 2,

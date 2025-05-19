@@ -21,7 +21,7 @@ class _DeactiveUsersScreenState extends State<DeactiveUsersScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            "Unblock Account",
+            "Разблокировать",
             style: GoogleFonts.lato(
               textStyle: const TextStyle(
                 fontSize: 25,
@@ -32,7 +32,7 @@ class _DeactiveUsersScreenState extends State<DeactiveUsersScreen> {
             ),
           ),
           content: Text(
-            "Do you want to unblock this account ?",
+            "Разблокировать ?",
             style: GoogleFonts.lato(
               textStyle: const TextStyle(
                 fontSize: 16,
@@ -46,7 +46,7 @@ class _DeactiveUsersScreenState extends State<DeactiveUsersScreen> {
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: const Text("No"),
+              child: const Text("Нет"),
             ),
             ElevatedButton(
               onPressed: () {
@@ -66,7 +66,7 @@ class _DeactiveUsersScreenState extends State<DeactiveUsersScreen> {
                           builder: ((context) => const HomeScreen())));
                   SnackBar snackBar = const SnackBar(
                     content: Text(
-                      "User has been unBlocked",
+                      "Разблокирован",
                       style: TextStyle(
                         fontSize: 36,
                         color: Colors.black,
@@ -78,7 +78,7 @@ class _DeactiveUsersScreenState extends State<DeactiveUsersScreen> {
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 });
               },
-              child: const Text("Yes"),
+              child: const Text("Да"),
             ),
           ],
         );
@@ -173,7 +173,7 @@ class _DeactiveUsersScreenState extends State<DeactiveUsersScreen> {
                       },
                       icon: const Icon(Icons.check_box),
                       label: Text(
-                        "Activate".toUpperCase(),
+                        "Активировать".toUpperCase(),
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
                             fontSize: 15,
@@ -192,7 +192,7 @@ class _DeactiveUsersScreenState extends State<DeactiveUsersScreen> {
       } else {
         return Center(
           child: Text(
-            "No record found!",
+            "Не найдено!",
             style: GoogleFonts.lato(
               textStyle: const TextStyle(
                 fontSize: 30,

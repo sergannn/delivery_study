@@ -57,7 +57,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
               expandedHeight: 100,
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
-                  '${widget.model?.menuTitle ?? "Menu"}\'s Items',
+                  '${widget.model?.menuTitle ?? "Menu"}\'s ',
                   style: const TextStyle(
                     color: Colors.black,
                     fontSize: 18,
@@ -127,7 +127,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
 
                 if (snapshot.hasError) {
                   return SliverToBoxAdapter(
-                    child: Center(child: Text('Error: ${snapshot.error}')),
+                    child: Center(child: Text('Ошибка: ${snapshot.error}')),
                   );
                 }
 
@@ -143,7 +143,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                           Text('No items available ${widget.model!.menuID}'),
+                           Text('Нет доступных ${widget.model!.menuID}'),
                           const SizedBox(height: 20),
                           ElevatedButton(
                             onPressed: () {
@@ -154,7 +154,7 @@ class _ItemsScreenState extends State<ItemsScreen> {
                                 ),
                               );
                             },
-                            child: const Text('Add New Item'),
+                            child: const Text('Добавить'),
                           ),
                         ],
                       ),

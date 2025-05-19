@@ -118,7 +118,7 @@ class _SplashScreenState extends State<SplashScreen>
                     opacity: animateCafeText ? 1 : 0,
                     duration: const Duration(seconds: 1),
                     child: Text(
-                      'Sellers App - Neomond'.toUpperCase(),
+                      'Для продавцов'.toUpperCase(),
                       style: GoogleFonts.lato(
                         fontSize: 27,
                         fontWeight: FontWeight.bold,
@@ -152,7 +152,7 @@ class _BottomPart extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'Find The Food for You',
+              'Продукты для вас',
               style: GoogleFonts.lato(
                 fontSize: 27,
                 fontWeight: FontWeight.bold,
@@ -161,8 +161,8 @@ class _BottomPart extends StatelessWidget {
             ),
             const SizedBox(height: 30.0),
             Text(
-              'We make it simple to find a food for you. '
-              'enter your address and let us do the rest.',
+              'быстрый заказ еды. '
+              ,
               style: GoogleFonts.lato(
                 fontSize: 15,
                 fontWeight: FontWeight.normal,
@@ -177,7 +177,7 @@ class _BottomPart extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    "Login ".toUpperCase(),
+                    "Логин ".toUpperCase(),
                     style: GoogleFonts.lato(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

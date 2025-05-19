@@ -100,7 +100,7 @@ class _CartItemDesignState extends State<CartItemDesign> {
                   Row(
                     children: [
                       Text(
-                        "Price ",
+                        "Цена ",
                         style: GoogleFonts.lato(
                           textStyle: const TextStyle(
                             fontSize: 15,

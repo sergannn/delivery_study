@@ -143,7 +143,7 @@ class _ParcelDeliveringScreenState extends State<ParcelDeliveringScreen> {
                   children: const [
                     SizedBox(height: 12),
                     Text(
-                      "Show Drop-off Location",
+                      "Локация",
                       style: TextStyle(
                         fontFamily: "Signatra",
                         fontSize: 20,
@@ -190,7 +190,7 @@ class _ParcelDeliveringScreenState extends State<ParcelDeliveringScreen> {
                   height: 50,
                   child: const Center(
                       child: Text(
-                    "Delivered",
+                    "Доставлено",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 15,

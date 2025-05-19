@@ -32,7 +32,7 @@ class _RiderInformationState extends State<RiderInformation> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              "Profile".toUpperCase(),
+              "Профиль".toUpperCase(),
               style: GoogleFonts.lato(
                 textStyle: const TextStyle(
                   fontSize: 20,
@@ -121,7 +121,7 @@ class _RiderInformationState extends State<RiderInformation> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                "Restaurants".toUpperCase(),
+                "Рестораны".toUpperCase(),
                 style: GoogleFonts.lato(
                   textStyle: const TextStyle(
                     fontSize: 15,
@@ -132,7 +132,7 @@ class _RiderInformationState extends State<RiderInformation> {
               ),
               Center(
                 child: Text(
-                  "Meals".toUpperCase(),
+                  "Продукты".toUpperCase(),
                   style: GoogleFonts.lato(
                     textStyle: const TextStyle(
                       fontSize: 15,

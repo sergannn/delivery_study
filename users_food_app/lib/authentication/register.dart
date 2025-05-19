@@ -325,7 +325,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
                       child: Text(
-                        'Sign Up'.toUpperCase(),
+                        'Регистрация'.toUpperCase(),
                         style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,

@@ -109,7 +109,7 @@ addItemToCart(String? foodItemId, BuildContext context, int itemCounter) {
     },
   ).then(
     (value) {
-      Fluttertoast.showToast(msg: "Item Added Successfully");
+      Fluttertoast.showToast(msg: "Добавлено");
 
       sharedPreferences!.setStringList("userCart", tempList);
 

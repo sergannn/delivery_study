@@ -51,7 +51,7 @@ class _SellerInfoState extends State<SellerInfo> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              "Restaurant Info".toUpperCase(),
+              "О ресторане".toUpperCase(),
               style: GoogleFonts.lato(
                 textStyle: const TextStyle(
                   fontSize: 20,
@@ -111,7 +111,7 @@ class _SellerInfoState extends State<SellerInfo> {
                       Padding(
                         padding: const EdgeInsets.all(5),
                         child: Text(
-                          "Earnings: ",
+                          "Доходы: ",
                           style: GoogleFonts.lato(
                             textStyle: const TextStyle(
                                 fontSize: 20,
@@ -173,7 +173,7 @@ class _SellerInfoState extends State<SellerInfo> {
                 height: 30,
               ),
               Text(
-                "Menus",
+                "Меню",
                 style: GoogleFonts.lato(
                   textStyle: const TextStyle(
                       fontSize: 19,

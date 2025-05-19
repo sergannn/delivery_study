@@ -29,7 +29,7 @@ class _EarningsScreenState extends State<EarningsScreen> {
               ),
               const SizedBox(height: 10),
               const Text(
-                "Total Earnings ",
+                "Все заработки",
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.black54,
@@ -65,7 +65,7 @@ class _EarningsScreenState extends State<EarningsScreen> {
                       color: Colors.black,
                     ),
                     title: Text(
-                      "Back",
+                      "Назад",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.black,

@@ -95,7 +95,7 @@ void _checkFirestorePath() async {
               padding: const EdgeInsets.all(16),
               color: Colors.white.withOpacity(0.7),
               child: Text(
-                '${widget.model!.menuTitle}\'s Menu Items'.toUpperCase(),
+                '${widget.model!.menuTitle}\'s продукты в меню'.toUpperCase(),
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -121,7 +121,7 @@ void _checkFirestorePath() async {
     
     if (snapshot.hasError) {
       print('ERROR: ${snapshot.error}');
-      return Center(child: Text('Error: ${snapshot.error}'));
+      return Center(child: Text('Ошибка: ${snapshot.error}'));
     }
 
     if (snapshot.connectionState == ConnectionState.waiting) {
@@ -150,13 +150,13 @@ void _checkFirestorePath() async {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('No items found'),
+            const Text('Пусто'),
             TextButton(
-              child: const Text('Refresh'),
+              child: const Text('Обновить'),
               onPressed: () => setState(() {}),
             ),
             TextButton(
-              child: const Text('Check Firestore'),
+              child: const Text('Проверить БД'),
               onPressed: () {
                 print('Checking Firestore path...');
                 _checkFirestorePath();

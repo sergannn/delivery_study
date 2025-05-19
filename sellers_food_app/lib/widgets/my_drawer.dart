@@ -98,7 +98,7 @@ class MyDrawer extends StatelessWidget {
                       size: 30,
                     ),
                     title: Text(
-                      'Home',
+                      'Домой',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -127,7 +127,7 @@ class MyDrawer extends StatelessWidget {
                       size: 30,
                     ),
                     title: Text(
-                      'New Orders',
+                      'Новые заказы',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -156,7 +156,7 @@ class MyDrawer extends StatelessWidget {
                       size: 30,
                     ),
                     title: Text(
-                      'History - Orders',
+                      'История',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -185,7 +185,7 @@ class MyDrawer extends StatelessWidget {
                       size: 30,
                     ),
                     title: Text(
-                      'Sign Out',
+                      'Выход',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontSize: 20,

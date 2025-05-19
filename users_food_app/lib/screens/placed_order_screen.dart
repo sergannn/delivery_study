@@ -61,7 +61,7 @@ class _PlacedOrderScreenState extends State<PlacedOrderScreen> {
             builder: (context) => const HomeScreen(),
           ),
         );
-        Fluttertoast.showToast(msg: "Order has been placed.");
+        Fluttertoast.showToast(msg: "Заказ сделан");
       });
     });
   }
@@ -137,7 +137,7 @@ class _PlacedOrderScreenState extends State<PlacedOrderScreen> {
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
                   child: Text(
-                    'Place Order'.toUpperCase(),
+                    'Сделать заказ'.toUpperCase(),
                     style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,

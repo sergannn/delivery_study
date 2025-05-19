@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         )
       ],
       child: MaterialApp(
-        title: 'Users App',
+        title: 'Для пользователей',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.amber,

@@ -95,7 +95,7 @@ class MyDrawer extends StatelessWidget {
                       size: 25,
                     ),
                     title: Text(
-                      'Home',
+                      'Домой',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -120,7 +120,7 @@ class MyDrawer extends StatelessWidget {
                       size: 25,
                     ),
                     title: Text(
-                      'My Orders',
+                      'Мои заказы',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -145,7 +145,7 @@ class MyDrawer extends StatelessWidget {
                       size: 25,
                     ),
                     title: Text(
-                      'History',
+                      'История',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -170,7 +170,7 @@ class MyDrawer extends StatelessWidget {
                       size: 25,
                     ),
                     title: Text(
-                      'Search',
+                      'Поиск',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -195,7 +195,7 @@ class MyDrawer extends StatelessWidget {
                       size: 25,
                     ),
                     title: Text(
-                      'Add New Address',
+                      'Добавить адрес',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontSize: 20,
@@ -220,7 +220,7 @@ class MyDrawer extends StatelessWidget {
                       size: 25,
                     ),
                     title: Text(
-                      'Sign Out',
+                      'Выход',
                       style: GoogleFonts.lato(
                         textStyle: const TextStyle(
                           fontSize: 20,

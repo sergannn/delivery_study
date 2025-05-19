@@ -78,7 +78,7 @@ class _AddressDesignState extends State<AddressDesign> {
                               TableRow(
                                 children: [
                                   Text(
-                                    "Name: ",
+                                    "Имя: ",
                                     style: GoogleFonts.lato(
                                       textStyle: const TextStyle(
                                         fontSize: 15,
@@ -102,7 +102,7 @@ class _AddressDesignState extends State<AddressDesign> {
                               TableRow(
                                 children: [
                                   Text(
-                                    "Phone Number: ",
+                                    "Номер телефона: ",
                                     style: GoogleFonts.lato(
                                       textStyle: const TextStyle(
                                         fontSize: 15,
@@ -198,7 +198,7 @@ class _AddressDesignState extends State<AddressDesign> {
                               TableRow(
                                 children: [
                                   Text(
-                                    "Full Address: ",
+                                    "Полный адрес: ",
                                     style: GoogleFonts.lato(
                                       textStyle: const TextStyle(
                                         fontSize: 15,
@@ -236,7 +236,7 @@ class _AddressDesignState extends State<AddressDesign> {
                     // MapsUtils.openMapWithAddress(
                     //     widget.model!.fullAddress!);
                   },
-                  child: const Text("Check on Maps"),
+                  child: const Text("Проверить на карте"),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.amber,
                   ),
@@ -258,7 +258,7 @@ class _AddressDesignState extends State<AddressDesign> {
                             ),
                           );
                         },
-                        child: const Text("Proceed"),
+                        child: const Text("Продолжить"),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.green,
                         ),

@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
               expandedHeight: 100,
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
-                  'Sellers App',
+                  'Для продавцов',
                   style: GoogleFonts.lato(
                     textStyle: const TextStyle(
                       fontSize: 18,
@@ -111,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (snapshot.hasError) {
                   print('Error details: ${snapshot.error}');
                   return SliverToBoxAdapter(
-                    child: Center(child: Text('Error: ${snapshot.error}')),
+                    child: Center(child: Text('Ошибка: ${snapshot.error}')),
                   );
                 }
 
@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text('No menus available'),
+                          const Text('Нет доступных меню'),
                           TextButton(
                             onPressed: () => Navigator.push(
                               context,
@@ -136,7 +136,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 builder: (c) => const MenusUploadScreen(),
                               ),
                             ),
-                            child: const Text('Add New Menu'),
+                            child: const Text('Добавить в меню'),
                           ),
                         ],
                       ),
